@@ -1,6 +1,6 @@
 package tasks;
 
-import service.DataProvider;
+import repositories.DataRepository;
 import utils.Printer;
 
 import java.util.Queue;
@@ -8,7 +8,7 @@ import java.util.Queue;
 public abstract class Task implements DataUpdater {
 
     public void start() {
-        Queue<String> data = DataProvider.getData();
+        Queue<String> data = DataRepository.getData();
         Printer<String> printer = new Printer<>();
         printer.print("Initial data", data);
         updateData(data);
